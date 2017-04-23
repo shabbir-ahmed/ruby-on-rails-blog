@@ -42,6 +42,8 @@ Rails.application.configure do
   # number of complex assets.
   config.assets.debug = true
 
+  config.action_mailer.default_url_options = { :host => 'personal-shabbir-ahmed.c9users.io' }
+
   # Suppress logger output for asset requests.
   config.assets.quiet = true
 
