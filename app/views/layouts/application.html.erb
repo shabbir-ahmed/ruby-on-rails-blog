@@ -24,13 +24,21 @@
 		   <div class="top-header">
 			  <ul class="cl-effect-16 top-nag">
 			      <% if user_signed_in? %>
-					<li><a href="#" data-hover="#"><%= current_user.email %></a></li>
+					<li>
+					    <a href="#" data-hover="#">
+					        <% if current_user.first_name && current_user.first_name == blank? %>
+					            <%= current_user.email %>
+					        <% else %>
+					            <%= current_user.first_name %> <%= current_user.last_name %>
+					        <% end %>
+					    </a>
+					</li>
 					<li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
 					<% else %>
 					    <li><a href="<%= new_user_registration_path %>" data-hover="Registration">Registration</a></li>
 					    <li><a href="<%= new_user_session_path %>" data-hover="Login">Login</a></li>
 					<% end %>
-					<li><a href="#" data-hover="About">About</a></li>
+					<li><a href="<%= about_index_path %>" data-hover="About">About</a></li>
 					<li><a href="#" data-hover="SERVICES">SERVICES</a></li>
 					
 					<li><a href="#" data-hover="CONTACT">Contact</a></li>
@@ -80,9 +88,9 @@
 				   </ul>
 			    </div>
 		    </div>
-		         <p class="notice"><%= notice %></p>
-                 <p class="alert"><%= alert %></p>
             <div class="col-md-9 main">
+                <p class="notice"><%= notice %></p>
+                 <p class="alert"><%= alert %></p>
         
                 <%= yield %>
             
