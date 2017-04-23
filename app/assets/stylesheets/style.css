@@ -1,13 +1,15 @@
-/*--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
---*/
+
 html, body{
 font-family: 'Open Sans', sans-serif;
  font-size: 100%;
  background: #FFf;
+}
+#error_explanation {
+  background-color: rgb(242, 222, 222);
+}
+#error_explanation li {
+  list-style: outside none none;
+  padding: 6px 25px;
 }
 
 body a {
