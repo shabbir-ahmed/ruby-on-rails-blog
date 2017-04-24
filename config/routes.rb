@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
-  get 'contact/index'
+  # get 'contact/index'
 
   devise_for :users
   # get 'about/index'
 
   root 'home#index'
   
+  resources :contact
   resources :about
   resources :home
 
